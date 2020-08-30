@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Luhan</title>
+    <link href="{% static 'css/crud.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/menu.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body>
+    {% include "../menu.html" %}
+<main>
+     <div class="container">
+         <div>
+                <!-- metodo post para salvar o form, se define ele no views.py -->
+            <form onsubmit="/genero" id="form-genero" method="post">
+                {{form}}
+                <!-- Criar um token de verificação -->
+                {% csrf_token %}
+                <input type="submit" id="submit-button" value="Alterar"/>
+            </form>
+        </div>
+     </div>
+</main>
+
+
+</body>
+</html>
